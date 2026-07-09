@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Engel Gil — Integración, IA y software a medida para pymes</title>
+  <meta name="description" content="Blog personal de Engel Gil: integración de sistemas, asesoría en Inteligencia Artificial y desarrollo de software a medida para pequeñas y medianas empresas.">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <nav class="nav">
+      <a href="index.html" class="logo">
+        <span class="logo-mark">EG</span>
+        engelgil
+      </a>
+      <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+      <ul class="nav-links">
+        <li><a href="index.html" aria-current="page">Inicio</a></li>
+        <li><a href="sobre-mi.html">Sobre mí</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ================= HERO ================= -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <p class="prompt">whoami<span class="cursor"></span></p>
+          <h1>Conecto sistemas <span class="accent">legacy</span> con las herramientas del mañana.</h1>
+          <p class="hero-lead">
+            Soy Engel Gil, desarrollador de software especializado en integraciones (ERP, WMS, APIs)
+            y en llevar Inteligencia Artificial y software a medida a pequeñas y medianas empresas.
+            Este es mi espacio para compartir lo que aprendo en el camino.
+          </p>
+          <div class="hero-actions">
+            <a href="blog.html" class="btn btn-primary">Leer el blog</a>
+            <a href="contacto.html" class="btn btn-ghost">Conversemos</a>
+          </div>
+        </div>
+
+        <div>
+          <svg class="circuit" viewBox="0 0 420 220" role="img" aria-label="Diagrama que conecta un sistema heredado con una API y con la nube de Inteligencia Artificial">
+            <rect class="node-box" x="10" y="80" width="90" height="60" rx="3"></rect>
+            <text class="node-label" x="55" y="105" text-anchor="middle">SISTEMA</text>
+            <text class="node-label" x="55" y="120" text-anchor="middle">LEGACY</text>
+
+            <rect class="node-box" x="165" y="20" width="90" height="60" rx="3"></rect>
+            <text class="node-label" x="210" y="45" text-anchor="middle">API /</text>
+            <text class="node-label" x="210" y="60" text-anchor="middle">INTEGRACIÓN</text>
+
+            <rect class="node-box" x="320" y="80" width="90" height="60" rx="3"></rect>
+            <text class="node-label" x="365" y="105" text-anchor="middle">IA /</text>
+            <text class="node-label" x="365" y="120" text-anchor="middle">NUBE</text>
+
+            <rect class="node-box" x="165" y="150" width="90" height="55" rx="3"></rect>
+            <text class="node-label" x="210" y="173" text-anchor="middle">PYME</text>
+            <text class="node-label" x="210" y="188" text-anchor="middle">CLIENTE</text>
+
+            <path id="line1" class="path-line" d="M100,105 L165,55"></path>
+            <path id="line2" class="path-line" d="M255,55 L320,105"></path>
+            <path id="line3" class="path-line" d="M210,80 L210,150"></path>
+
+            <path class="path-draw" d="M100,105 L165,55 L255,55 L320,105" style="stroke-dasharray:340;"></path>
+
+            <circle class="pulse" r="4" style="offset-path: path('M100,105 L165,55 L255,55 L320,105');"></circle>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SERVICIOS / MARCA PERSONAL ================= -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <p class="prompt">cat servicios.txt<span class="cursor"></span></p>
+          <h2>En qué puedo ayudarte</h2>
+          <p>Tres frentes donde la tecnología deja de ser una barrera y se convierte en ventaja para tu negocio.</p>
+        </div>
+
+        <div class="services-grid">
+          <div class="service-card">
+            <span class="tag">01 · Integración</span>
+            <h3>Software e integraciones a medida</h3>
+            <p>Conecto tu ERP, WMS o sistema legacy con nuevas plataformas: APIs, SOAP, staging en SQL Server y automatizaciones que eliminan el trabajo manual repetitivo.</p>
+          </div>
+          <div class="service-card">
+            <span class="tag">02 · Inteligencia Artificial</span>
+            <h3>Asesoría y entrenamiento en IA</h3>
+            <p>Acompaño a equipos y pymes a incorporar IA en su día a día: desde automatizar tareas hasta elegir la herramienta correcta para cada proceso.</p>
+          </div>
+          <div class="service-card">
+            <span class="tag">03 · Consultoría</span>
+            <h3>Consultoría tecnológica para pymes</h3>
+            <p>Diagnóstico de procesos, recomendación de herramientas y acompañamiento en proyectos de migración e implementación tecnológica.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= ÚLTIMAS ENTRADAS ================= -->
+    <section class="section section-alt">
+      <div class="container">
+        <div class="section-head">
+          <p class="prompt">ls ./blog<span class="cursor"></span></p>
+          <h2>Últimas entradas</h2>
+          <p>Notas sobre integración, marca personal técnica y el camino de aprender en público.</p>
+        </div>
+
+        <div class="posts-grid">
+          <article class="post-card">
+            <div class="meta"><span class="num">01</span><span>Bienvenida</span></div>
+            <h3><a href="posts/entrada-1-bienvenida.html">Bienvenido a mi blog: de las tarjetas perforadas a la nube</a></h3>
+            <p>Quién soy, por qué escribo y qué vas a encontrar en este espacio sobre integración, IA y software para pymes.</p>
+            <span class="read-more"><a href="posts/entrada-1-bienvenida.html">Leer entrada →</a></span>
+          </article>
+
+          <article class="post-card">
+            <div class="meta"><span class="num">02</span><span>Gestión de negocios en redes</span></div>
+            <h3><a href="posts/entrada-2-marca-personal-redes.html">Tu marca personal técnica es tu mejor integración</a></h3>
+            <p>Cómo un desarrollador puede aplicar gestión de negocios en redes sociales para construir autoridad y confianza.</p>
+            <span class="read-more"><a href="posts/entrada-2-marca-personal-redes.html">Leer entrada →</a></span>
+          </article>
+
+          <article class="post-card">
+            <div class="meta"><span class="num">03</span><span>Reflexión</span></div>
+            <h3><a href="posts/entrada-3-reflexion.html">Lo que el AS400 me enseñó sobre el futuro</a></h3>
+            <p>Una reflexión personal sobre pasar 25 años de sistema legacy a un proyecto de migración a SAP S/4HANA.</p>
+            <span class="read-more"><a href="posts/entrada-3-reflexion.html">Leer entrada →</a></span>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <p>© <span data-year></span> Engel Gil — construido con HTML, CSS y JS.</p>
+      <div class="social-links">
+        <a href="https://www.linkedin.com/in/engelgil/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://www.instagram.com/ENGEL_GIL20" target="_blank" rel="noopener">Instagram</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
