@@ -14,6 +14,9 @@
   --accent:    #E8A33D;   /* ámbar — traza de circuito / soldadura */
   --accent-2:  #4FA8A0;   /* verde azulado — estado "conectado" */
   --danger:    #D9684F;
+  --purple:    #9B6DFF;
+  --pink:      #E86FAD;
+  --cyan:      #3DD6F5;
 
   /* Tipografía */
   --font-mono: 'JetBrains Mono', 'Courier New', monospace;
@@ -34,6 +37,10 @@ html {
 body {
   margin: 0;
   background: var(--bg);
+  background-image:
+    radial-gradient(ellipse 80% 40% at 20% 0%, rgba(79,168,160,0.08) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 30% at 80% 100%, rgba(155,109,255,0.07) 0%, transparent 60%);
+  background-attachment: fixed;
   color: var(--ink);
   font-family: var(--font-sans);
   font-size: 16px;
@@ -210,7 +217,22 @@ textarea:focus-visible {
 .hero {
   padding: 88px 0 64px;
   border-bottom: 1px solid var(--line);
+  position: relative;
+  overflow: hidden;
 }
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 70% 60% at 10% 50%, rgba(79,168,160,0.12) 0%, transparent 65%),
+    radial-gradient(ellipse 50% 50% at 90% 20%, rgba(232,163,61,0.10) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 40% at 70% 90%, rgba(155,109,255,0.08) 0%, transparent 55%);
+  pointer-events: none;
+  z-index: 0;
+}
+.hero > * { position: relative; z-index: 1; }
+.hero .container { position: relative; z-index: 1; }
 
 .hero-grid {
   display: grid;
@@ -376,7 +398,31 @@ textarea:focus-visible {
   display: flex;
   flex-direction: column;
   height: 100%;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
 }
+.post-card::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  opacity: 0.7;
+  transition: opacity 0.25s ease;
+}
+.post-card:hover {
+  border-color: var(--accent-2);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 32px rgba(79,168,160,0.18), 0 2px 8px rgba(0,0,0,0.4);
+}
+.post-card:hover::before {
+  opacity: 1;
+}
+.post-card:nth-child(1)::before { background: linear-gradient(90deg, var(--accent), #f0ad52); }
+.post-card:nth-child(2)::before { background: linear-gradient(90deg, var(--accent-2), var(--cyan)); }
+.post-card:nth-child(3)::before { background: linear-gradient(90deg, var(--purple), var(--pink)); }
+.post-card:nth-child(3):hover { border-color: var(--purple); box-shadow: 0 8px 32px rgba(155,109,255,0.18), 0 2px 8px rgba(0,0,0,0.4); }
 .post-card .meta {
   font-family: var(--font-mono);
   font-size: 12px;
@@ -385,7 +431,13 @@ textarea:focus-visible {
   display: flex;
   gap: 10px;
 }
-.post-card .meta .num { color: var(--accent); }
+.post-card .meta .num {
+  color: var(--accent);
+  font-weight: 700;
+  text-shadow: 0 0 8px rgba(232,163,61,0.5);
+}
+.post-card:nth-child(2) .meta .num { color: var(--accent-2); text-shadow: 0 0 8px rgba(79,168,160,0.5); }
+.post-card:nth-child(3) .meta .num { color: var(--purple); text-shadow: 0 0 8px rgba(155,109,255,0.5); }
 .post-card h3 {
   font-size: 19px;
   margin-bottom: 10px;
@@ -398,6 +450,10 @@ textarea:focus-visible {
   font-size: 13px;
   margin-top: 12px;
 }
+.post-card .read-more a { transition: color 0.2s ease; }
+.post-card:nth-child(1) .read-more a { color: var(--accent); }
+.post-card:nth-child(2) .read-more a { color: var(--accent-2); }
+.post-card:nth-child(3) .read-more a { color: var(--purple); }
 
 /* ---------- Contenido de artículo (post) ---------- */
 .post-header {
@@ -559,6 +615,7 @@ textarea:focus-visible {
 .site-footer {
   border-top: 1px solid var(--line);
   padding: 40px 0;
+  background: linear-gradient(180deg, transparent, rgba(27,31,38,0.8));
 }
 .footer-grid {
   display: flex;
@@ -575,9 +632,18 @@ textarea:focus-visible {
 }
 .social-links {
   display: flex;
+  align-items: center;
   gap: 16px;
 }
+.social-links span {
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 13px;
+}
 .social-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
   color: var(--muted);
   font-family: var(--font-mono);
   font-size: 13px;
@@ -585,10 +651,14 @@ textarea:focus-visible {
   border-radius: var(--radius);
   padding: 8px 14px;
 }
+.social-links a svg {
+  flex-shrink: 0;
+}
 .social-links a:hover {
   color: var(--accent-2);
   border-color: var(--accent-2);
   text-decoration: none;
+  box-shadow: 0 0 12px rgba(79,168,160,0.2);
 }
 
 /* ---------- Utilidades ---------- */
